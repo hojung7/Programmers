@@ -1,12 +1,11 @@
 class Solution {
     public String solution(int age) {
-        // 나이를 문자열로 변환
-        String ageStr = Integer.toString(age);
         StringBuilder answer = new StringBuilder();
 
-        // 각 문자(숫자)를 변환하여 answer에 추가
-        for (char ch : ageStr.toCharArray()) {
-            answer.append((char) ('a' + (ch - '0'))); // '0'의 아스키 코드값을 기준으로 변환
+        // 나이를 문자열로 변환하여 처리
+        String str = Integer.toString(age);
+        for (int i = 0; i < str.length(); i++) {
+            answer.append((char)(str.charAt(i) + ('a' - '0'))); // 알파벳으로 변환 후 추가
         }
 
         return answer.toString();
